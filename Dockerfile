@@ -1,5 +1,4 @@
 FROM python:2.7
-MAINTAINER Eric Taieb Walch <teknologist@gmail.com>
 
 RUN mkdir /app && \
 cd /app && \
@@ -9,8 +8,6 @@ python setup.py install && \
 cd .. && \
 git clone https://github.com/rshipp/webNUT.git && cd webNUT && \
 pip install -e .
-
-
 
 COPY /docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh
